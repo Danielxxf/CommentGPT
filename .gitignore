@@ -131,6 +131,6 @@ dist
 
 *.vsix
 src/test
-src/config.json
+config/config.json
 .vscode
 out

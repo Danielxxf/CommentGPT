@@ -3,7 +3,7 @@
   "displayName": "CommentGPT",
   "description": "一个能为选中段落通过ChatGPT自动生成注释的小工具",
   "publisher": "Danielxxf",
-  "version": "0.1.0",
+  "version": "0.1.5",
   "engines": {
     "vscode": "^1.79.0"
   },
