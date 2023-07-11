@@ -1,7 +1,7 @@
 # CommentGPT
 这是一个使用 ChatGPT 为选定代码段落添加注释的 VSCode 插件
 ## Config
-打开 `config_example.json`
+编辑 `config/config_example.json`
 
 ```
 {
@@ -16,7 +16,7 @@
   
 ![image](https://github.com/Danielxxf/CommentGPT/assets/48150158/bd428bf3-a736-4c22-99eb-bd72c077a226)
 
-## 声明：
+## 声明
 该插件是基于 ChatGPT 模型的一个演示扩展程序，用于自动生成代码注释。请注意以下事项：
 1. 生成结果的准确性和质量有限：尽管 ChatGPT 是一种强大的自然语言处理模型，但生成的注释仅仅是基于给定代码片段的猜测。它可能无法提供真实、完整或准确的注释。用户应该审查和验证生成的注释，并根据其判断决定是否采纳。
 2. 保护您的 API 密钥和敏感信息：请务必妥善保管您的 OpenAI API 密钥和其他敏感信息。本插件并不处理或存储这些信息，但如配置文件中所使用，请确保不要将敏感信息泄露给他人。
