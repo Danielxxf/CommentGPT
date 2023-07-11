@@ -43,9 +43,12 @@ export function activate(context: vscode.ExtensionContext) {
         const comment = await generateComment(codeSnippet, openai, model);
         console.log(comment);
         if (comment && comment.length > 0) {
+          const languageId = document.languageId;
+          const commentSymbol = getCommentSymbol(languageId);
+
           editor.edit((editBuilder) => {
-            editBuilder.insert(selection.start, `/*`);
-            editBuilder.insert(selection.end, `*/\n`);
+            editBuilder.insert(selection.start, `${commentSymbol.start}\n`);
+            editBuilder.insert(selection.end, `\n${commentSymbol.end}\n`);
             editBuilder.insert(selection.end, `\n${comment}\n`);
           });
         }
@@ -78,6 +81,36 @@ async function generateComment(codeSnippet: string, openai: OpenAIApi, model: st
         reject(new Error('Failed to generate comment: ' + error.message));
       });
   });
+}
+
+function getCommentSymbol(languageId: string): { start: string, end: string } {
+  switch (languageId) {
+    case 'javascript':
+    case 'typescript':
+      return { start: '/*', end: '*/' };
+    case 'python':
+      return { start: '"""', end: '"""' };
+    case 'java':
+      return { start: '/**', end: '*/' };
+    case 'cpp':
+    case 'c':
+    case 'csharp':
+      return { start: '/*', end: '*/' };
+    case 'html':
+    case 'xml':
+      return { start: '<!--', end: '-->' };
+    case 'css':
+      return { start: '/*', end: '*/' };
+    case 'ruby':
+      return { start: '=begin', end: '=end' };
+    case 'swift':
+      return { start: '/*', end: '*/' };
+    case 'php':
+      return { start: '/*', end: '*/' };
+    // Add more cases for other programming languages if needed
+    default:
+      return { start: '', end: '' };
+  }
 }
 
 export function deactivate() {}
