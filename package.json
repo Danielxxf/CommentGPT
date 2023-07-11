@@ -1,9 +1,9 @@
 {
   "name": "commentgpt",
   "displayName": "CommentGPT",
-  "description": "一个能为选中段落通过ChatGPT自动生成注释的小工具",
+  "description": "这是一个基于 ChatGPT 可为多种语言代码添加注释的 VSCode 插件",
   "publisher": "Danielxxf",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "engines": {
     "vscode": "^1.79.0"
   },

@@ -66,7 +66,7 @@ async function generateComment(codeSnippet: string, openai: OpenAIApi, model: st
     console.log(codeSnippet);
     openai.createChatCompletion({
       model: model,
-      messages: [{ role: 'user', content: '请为以下代码添加详尽的注释，不要修改源代码，如果没给出代码，请报错\n' + codeSnippet }],
+      messages: [{ role: 'user', content: 'Please add detailed comments to the following code. The comments should be written in '+ vscode.env.language.toLowerCase() +'(ISO 639-1) and should not modify the source code. If no code is provided, please throw an error.\n' + codeSnippet }],
     })
       .then((response) => {
         const message = response.data.choices[0]?.message?.content;
