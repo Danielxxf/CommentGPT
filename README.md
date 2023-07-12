@@ -1,12 +1,13 @@
 # CommentGPT
-这是一个使用 ChatGPT 为选定代码段落添加注释的 VSCode 插件
+这是一个基于 ChatGPT 可为多种语言代码添加注释的 VSCode 插件。
 ## Config
 编辑 `config/config_example.json`
 
 ```
 {
-    "apiKey": "Your_OpenAI_ApiKey", //换成你自己的 ApiKey
-    "model": "gpt-3.5-turbo"
+    "apiKey": "Your_OpenAI_ApiKey", //Replace it with your own ApiKey.
+    "model": "gpt-3.5-turbo",
+    "language": "" //Fill in your language or leave it blank (using vscode's language setting).
 }
 ```
 保存为 `config.json`
