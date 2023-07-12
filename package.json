@@ -12,7 +12,9 @@
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
-  "enabledApiProposals": ["contribEditorContentMenu"],
+  "enabledApiProposals": [
+    "contribEditorContentMenu"
+  ],
   "contributes": {
     "menus": {
       "editor/context": [
@@ -53,6 +55,8 @@
   "dependencies": {
     "axios": "^1.4.0",
     "axios-proxy-fix": "^0.16.3",
-    "openai": "^3.3.0"
+    "iso-639-1": "^2.1.15",
+    "openai": "^3.3.0",
+    "vscode-languageserver-protocol": "^3.17.3"
   }
 }
